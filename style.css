@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-xl;
+  }
+  
+  .neon-button {
+    @apply bg-neon-primary/20 text-neon-primary border border-neon-primary/50 
+           hover:bg-neon-primary/30 hover:border-neon-primary transition-all duration-300
+           font-semibold py-2 px-4 rounded-lg;
+  }
+  
+  .glow-effect {
+    @apply animate-glow;
+  }
+  
+  .cyber-input {
+    @apply bg-dark-bg/50 border border-neon-primary/30 rounded-lg px-4 py-2 
+           text-white focus:outline-none focus:border-neon-primary focus:ring-1 
+           focus:ring-neon-primary/50 transition-all;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 
+           transition-all cursor-pointer text-gray-300 hover:text-neon-primary;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-neon-primary/10 text-neon-primary border-l-4 border-neon-primary;
+  }
+}
