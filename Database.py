@@ -3,7 +3,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 from dotenv import load_dotenv
-
+import os
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./skydrop.db")
+# Railway automatically provides DATABASE_URL when you add PostgreSQL
 load_dotenv()
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./skydrop.db")
